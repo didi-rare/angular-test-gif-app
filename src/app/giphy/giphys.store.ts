@@ -12,7 +12,7 @@ export interface GiphysState extends EntityState<Giphy> {}
 @StoreConfig({
     name: 'giphys'
 })
-export class GiphysStore extends EntityStore<GiphysState, Giphy>{
+export class GiphysStore extends EntityStore<GiphysState, Giphy> {
     constructor() {
         super();
     }
