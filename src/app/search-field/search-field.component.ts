@@ -28,7 +28,7 @@ export class SearchFieldComponent implements OnInit {
 
 
     getQuery() {
-        const activeId = this.giphysQuery.select(this.term);
+        const activeId = this.giphysQuery.getValue().entities;
         console.log('active id', activeId);
     }
 }

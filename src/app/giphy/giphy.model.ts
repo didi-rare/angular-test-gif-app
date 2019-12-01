@@ -1,8 +1,4 @@
-import {ID} from '@datorama/akita';
-
-
-export type Giphy = {
-    id: string;
+export interface Giphy {
     searchTerm: string;
     results: any;
-};
+}
