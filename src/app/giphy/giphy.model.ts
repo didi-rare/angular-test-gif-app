@@ -2,7 +2,7 @@ import {ID} from '@datorama/akita';
 
 
 export type Giphy = {
-    id: ID;
+    id: string;
     searchTerm: string;
     results: any;
 };

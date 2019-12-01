@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GiphyService} from '../services/giphy/giphy.service';
+import {GiphysQuery} from '../giphy/giphys.query';
 
 @Component({
     selector: 'app-search-field',
@@ -8,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFieldComponent implements OnInit {
     name = 'Search Field';
-    constructor() {
+    term: any;
+    results: any;
+    constructor(private giphySvc: GiphyService, private giphysQuery: GiphysQuery) {
     }
 
     ngOnInit() {
+        setTimeout(() => {this.getQuery(); }, 20000);
+    }
+
+    search(term: string) {
+        this.giphySvc.searchForGifs(term).subscribe(value => {
+            this.results = value;
+            console.log(this.results);
+        });
+    }
+
+
+    getQuery() {
+        const activeId = this.giphysQuery.select(this.term);
+        console.log('active id', activeId);
     }
 }

@@ -4,6 +4,7 @@ import {GiphysQuery} from '../../giphy/giphys.query';
 import {HttpClient} from '@angular/common/http';
 import {noop, Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
+import {Giphy} from '../../giphy/giphy.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class GiphyService {
     searchForGifs(searchTerm: string): Observable<any> {
         const url = this.searchUrl + '&q=' + searchTerm;
         return this.http.get(url).pipe(
-            tap(response => this.giphysStore.set(response))
+            tap((response: any) => this.giphysStore.set({ids: [searchTerm], entities: response.data}))
         );
     }
 }
