@@ -22,7 +22,7 @@ export class GiphyService {
     /**
      *
      * Method to make http call to Gify API
-     * @param searchTerm the search input.
+     * @param searchTerm the search input value.
      */
     searchForGifs(searchTerm: string): Observable<any> {
         const url = this.searchUrl + '&q=' + searchTerm;

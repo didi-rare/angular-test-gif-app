@@ -9,12 +9,14 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AkitaNgDevtools} from '@datorama/akita-ngdevtools';
 import {environment} from '../environments/environment';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFieldComponent,
-    ResultsListComponent
+    ResultsListComponent,
+    ResultComponent
   ],
     imports: [
         BrowserModule,
