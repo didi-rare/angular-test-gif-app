@@ -22,13 +22,11 @@ export class SearchFieldComponent implements OnInit {
     search(term: string) {
         this.giphySvc.searchForGifs(term).subscribe(value => {
             this.results = value;
-            console.log(this.results.data);
         });
     }
 
 
     getQuery() {
         const activeId = this.giphysQuery.getValue().entities;
-        console.log('active id', activeId);
     }
 }

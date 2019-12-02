@@ -25,7 +25,6 @@ export class ResultsListComponent implements OnInit {
     }
 
     routeToPage(gif: any) {
-        console.log('gif object', gif);
         this.router.navigate(['view'], {state: gif});
     }
 }

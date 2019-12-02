@@ -1,3 +1,10 @@
-<p>
-    {{ state$ | async | json }}
-</p>
+
+<div *ngIf="(state$ | async) || {}; let gif">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img [src]="gif.images.original.url" alt="" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
