@@ -15,8 +15,13 @@
                 </div>
             </div>
         </form>
-
-        <div *ngIf="results">
+        <div *ngIf="state === 'loading'">
+            <p class="h3 loading">Loading...</p>
+        </div>
+        <div *ngIf="state === 'error'">
+            <p class="h3 loading">Ooops!! an error has occurred. Try again after sometime</p>
+        </div>
+        <div *ngIf="results && state === ''">
             <app-results-list [_gifs]="results.data"></app-results-list>
         </div>
     </div>
