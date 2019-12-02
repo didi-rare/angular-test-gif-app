@@ -15,5 +15,9 @@
                 </div>
             </div>
         </form>
+
+        <div *ngIf="results">
+            <app-results-list [_gifs]="results.data"></app-results-list>
+        </div>
     </div>
 </div>

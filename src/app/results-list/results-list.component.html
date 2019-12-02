@@ -1,4 +1,10 @@
-<div>
-    <!-- Implement result list here -->
-    Results List
+<div class="container">
+    <div class="row animate-box fadeInUp animated">
+        <!-- Implement result list here -->
+        <div class="col-md-4 col-sm-4 col-lg-3" *ngFor="let gif of gifs">
+            <div class="single-image" (click)="routeToPage(gif)">
+                <img [src]="gif.images.original.url" alt="" class="img-responsive">
+            </div>
+        </div>
+    </div>
 </div>

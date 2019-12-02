@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-results-list',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsListComponent implements OnInit {
 
-  constructor() { }
+    @Input('_gifs') private _gifs: any;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+
+    get gifs(): any {
+        return this._gifs;
+    }
+
+    set gifs(value: any) {
+        this._gifs = value;
+    }
+
+    routeToPage(gif: any) {
+        console.log('gif object', gif);
+        this.router.navigate(['view'], {state: gif});
+    }
 }

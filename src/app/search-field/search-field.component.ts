@@ -16,13 +16,13 @@ export class SearchFieldComponent implements OnInit {
     }
 
     ngOnInit() {
-        setTimeout(() => {this.getQuery(); }, 20000);
+        // setTimeout(() => {this.getQuery(); }, 20000);
     }
 
     search(term: string) {
         this.giphySvc.searchForGifs(term).subscribe(value => {
             this.results = value;
-            console.log(this.results);
+            console.log(this.results.data);
         });
     }
 
